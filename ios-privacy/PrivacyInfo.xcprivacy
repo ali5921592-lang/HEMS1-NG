@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<!--
+	This app:
+	  - Does NOT collect any data from the user/device
+	  - Does NOT send any data to any server (fully offline)
+	  - Does NOT track the user (NSPrivacyTracking = false)
+	  - Favorites/notes/shifts are stored ONLY in the device's own local
+	    storage (localStorage/UserDefaults), never leave the device.
+
+	The "Required Reason API" declarations below cover the standard
+	system APIs that the Capacitor/WKWebView infrastructure uses
+	internally within the app (locally, without sending data off-device).
+	If Apple's review process detects additional API usage, the relevant
+	category and reason code should be added here.
+	-->
+	<key>NSPrivacyTracking</key>
+	<false/>
+	<key>NSPrivacyTrackingDomains</key>
+	<array/>
+	<key>NSPrivacyCollectedDataTypes</key>
+	<array/>
+	<key>NSPrivacyAccessedAPITypes</key>
+	<array>
+		<dict>
+			<key>NSPrivacyAccessedAPIType</key>
+			<string>NSPrivacyAccessedAPICategoryUserDefaults</string>
+			<key>NSPrivacyAccessedAPITypeReasons</key>
+			<array>
+				<string>CA92.1</string>
+			</array>
+		</dict>
+		<dict>
+			<key>NSPrivacyAccessedAPIType</key>
+			<string>NSPrivacyAccessedAPICategoryFileTimestamp</string>
+			<key>NSPrivacyAccessedAPITypeReasons</key>
+			<array>
+				<string>C617.1</string>
+			</array>
+		</dict>
+	</array>
+</dict>
+</plist>
